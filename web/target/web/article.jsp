@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home</title>
+    <title>博客页面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css">
@@ -65,7 +65,7 @@
                     <h1 class="article-title"><a href="#">${article.title}</a></h1>
                     <div class="article-meta ">
                         <span class="item category"><a href="# ">${article.category}</a></span>
-                        <span class="item time ">2019-4-20</span>
+                        <span class="item time ">${article.date}</span>
                        <%-- <span class="item tags">标签：<a href="#">架构</a><a href="#">架构</a><a href="#">架构</a></span>--%>
                         <span class="item views"><i class="glyphicon glyphicon-eye-open"></i> 88</span>
                     </div>

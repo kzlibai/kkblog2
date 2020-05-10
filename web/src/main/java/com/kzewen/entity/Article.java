@@ -3,6 +3,8 @@ package com.kzewen.entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Article {
@@ -28,7 +30,21 @@ public class Article {
 
     private String content;
 
+    private String date;
+
+    public void setDate(String date){
+        this.date = date;
+    }
+
+    public String getDate(){
+        /*SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String dateString = formatter.format(this.reportTime);
+        this.date = dateString;*/
+        return date;
+    }
+
     public Long getId() {
+
         return id;
     }
 
@@ -73,6 +89,7 @@ public class Article {
     }
 
     public void setReportTime(Date reportTime) {
+
         this.reportTime = reportTime;
     }
 

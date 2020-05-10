@@ -69,6 +69,7 @@ public class ArticleServiceImpl implements ArticleService {
     @Transactional
     @Override
     public int addArticle(Article article) {
+
         return articleMapper.insert(article);
     }
 

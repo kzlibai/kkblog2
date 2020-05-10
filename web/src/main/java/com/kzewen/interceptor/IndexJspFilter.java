@@ -11,6 +11,8 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import javax.servlet.*;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.List;
 
 public class IndexJspFilter implements Filter {
     @Override
@@ -28,6 +30,14 @@ public class IndexJspFilter implements Filter {
         //所以通过 ApplicationContext 手动获取 UserContentMapper 对象。
         ArticleService articleService = applicationContext.getBean(ArticleService.class);
         PageBean<Article> pageBean = articleService.findAll(1,5);//默认值
+        List<Article> list = pageBean.getList();
+        //循环给article的date属性赋值
+        for (Article article:list){
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            String dateString = formatter.format(article.getReportTime());
+            article.setDate(dateString);
+        }
+        pageBean.setList(list);
         request.setAttribute("pageBean",pageBean);
         chain.doFilter(request,response);
     }

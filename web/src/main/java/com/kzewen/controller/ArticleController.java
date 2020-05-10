@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 
@@ -25,6 +27,15 @@ public class ArticleController {
                                 @RequestParam(value = "pageSize", required = false) Integer pageSize) {
         log.info("================进入/findAllByPage=======");
         PageBean<Article> pageBean = articleService.findAll(pageNum, pageSize);
+        List<Article> list = pageBean.getList();
+        //循环给article的date属性赋值
+        for (Article article:list){
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            String dateString = formatter.format(article.getReportTime());
+            article.setDate(dateString);
+        }
+        pageBean.setList(list);
+
         model.addAttribute("pageBean", pageBean);
         return "../index";
 
@@ -34,6 +45,11 @@ public class ArticleController {
     public String article(Model model, HttpServletRequest request,@RequestParam(value = "title", required = false) String title) {
         List<Article> articleList = articleService.findArticleByTitle(title);
         Article article = articleList.get(0);
+        //给article的date属性赋值
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String dateString = formatter.format(article.getReportTime());
+        article.setDate(dateString);
+
         request.getSession().setAttribute("article",article);
         model.addAttribute("article", article);
         return "../article";
@@ -47,6 +63,7 @@ public class ArticleController {
 
         //直接将管理员id写死，因为只是我一个人
         article.setAdminId((long) 1);
+        article.setReportTime(new Date());
 
         if(articleService.findOneById(article.getId())==null){//全新的文章
         articleService.addArticle(article);//加入数据库
@@ -79,8 +96,14 @@ public class ArticleController {
     public String findBlog(Model model, HttpServletRequest request,
                             @RequestParam(value = "keyword" ,required = false)String keyword ) {
         List<Article> articleList = articleService.findAllByKey(keyword);
-        log.info("================进入/findAllByPage=======");
+        log.info("================进入/findBlog=======");
 
+        //循环给article的date属性赋值
+        for (Article article:articleList){
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            String dateString = formatter.format(article.getReportTime());
+            article.setDate(dateString);
+        }
         model.addAttribute("articleList", articleList);
         return "../result";
 

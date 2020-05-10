@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home</title>
+    <title>小孔的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css">
@@ -96,12 +96,12 @@
         <div class="panel">
             <div class="text-center">
                 <h3>
-                    <stong><p>对不起，功能正在开发中。。。目前缺少的功能有：分类、时间、点赞、评论、回复、访问数</p>
+                    <stong><p>功能正在开发中。。。目前缺少的功能有：分类、点赞、评论、回复、访问数</p>
                     <p>本网站属于个人博客，不提供注册功能，后续开放点赞、评论回复功能。</p></stong>
                 </h3>
                 <div class="padding-big">
                     <span><a href="index.jsp">返回首页</a></span>
-                    <span><a href="404.jsp">联系我们</a></span>
+                    <span><a href="contact.jsp">联系我们</a></span>
                 </div>
             </div>
         </div>

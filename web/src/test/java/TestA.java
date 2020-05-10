@@ -12,6 +12,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @ContextConfiguration(locations = {"classpath:spring-mybatis.xml", "classpath:spring-mvc.xml"})
@@ -27,6 +29,16 @@ public class TestA extends AbstractJUnit4SpringContextTests {
 
     @Autowired
     private FileImgService fileImgService;
+
+
+    @Test
+    public void testTime(){
+        Article article  = articleService.findOneById((long) 1);
+       String dateString= article.getDate();
+
+        System.out.println(dateString);
+    }
+
 
     @Test
     public void getPath(){

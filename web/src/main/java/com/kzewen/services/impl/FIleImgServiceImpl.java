@@ -60,15 +60,15 @@ public class FIleImgServiceImpl implements FileImgService {
     private File path(String IMAGEPATH) {
         String path1 = System.getProperty("user.dir");
        // File pat=new File("C:\\K_computer\\work_place\\kkblog2\\web\\src\\main\\webapp\\images\\other");
-        File pat = new File(path1+"\\src\\main\\webapp\\images\\other");
-        File path = new File(IMAGEPATH);
+        File pat = new File("\\src\\main\\webapp\\images\\other");
+        //File path = new File(IMAGEPATH);
         if(!pat.isDirectory()) {
             pat.mkdirs();
         }
-        if(!path.isDirectory()) {
+        /*if(!path.isDirectory()) {
             path.mkdirs();
             return path;
-        }
+        }*/
         return pat;
 
     }

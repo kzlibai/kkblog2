@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home</title>
+    <title>首页</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen"
           href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
@@ -99,7 +99,7 @@
                             <p class="meta">
                                 <a class="category" href="#"><i
                                         class="glyphicon glyphicon-folder-open"></i> ${cont.category}</a>
-                                <a class="time" href="#"><i class="glyphicon glyphicon-time"></i> 2019-4-20</a>
+                                <a class="time" href="#"><i class="glyphicon glyphicon-time"></i> ${cont.date}</a>
                                 <a class="views" href="#"><i class="glyphicon glyphicon-eye-open"></i> 88</a>
                                 <a class="comment" href="#"><i class="glyphicon glyphicon-comment"></i> 10</a>
                             </p>
