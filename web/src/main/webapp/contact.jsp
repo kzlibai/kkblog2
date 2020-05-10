@@ -99,7 +99,7 @@
                     <stong><p>作者：小孔</p>
                     <p>联系电话：15972228122</p>
                         <p>前端模板作者：<a href="https://github.com/jiuri0624/reedo-blog-templates">https://github.com/jiuri0624/reedo-blog-templates</a></p>
-                    <p><a href="#">本项目地址</a></p></stong>
+                    <p>本项目地址：<a href="https://github.com/kzlibai/kkblog2">https://github.com/kzlibai/kkblog2</a></p></stong>
                 </h3>
                 <div class="padding-big">
                     <span><a href="index.jsp">返回首页</a></span>

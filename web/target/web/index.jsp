@@ -52,6 +52,9 @@
                         <li><a href="${ctx}/write">写博客</a></li>
                         <li><a href="${ctx}/loginOut">退出</a></li>
                     </c:if>
+                    <c:if test="${empty admin}">
+                        <li><a href="login.jsp">登录</a></li>
+                    </c:if>
 
                     <li><a href="404.jsp">关于</a></li>
                 </ul>

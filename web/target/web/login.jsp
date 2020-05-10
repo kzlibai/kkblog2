@@ -11,7 +11,7 @@
     <link href="${ctx}/layui/css/layui.css" rel="stylesheet">
     <style>
         body {
-            background: url("/images/backgroud.jpg") no-repeat center fixed;
+            background: url("/images/backgroud1.jpg") no-repeat center fixed;
         }
     </style>
 </head>
