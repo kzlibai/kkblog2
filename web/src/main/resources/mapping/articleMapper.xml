@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kzewen.dao.ArticleMapper" >
+	<resultMap id="BaseResultMap" type="com.kzewen.entity.Article" >
+		<id column="id" property="id" jdbcType="BIGINT" />
+		<result column="admin_id" property="adminId" jdbcType="BIGINT" />
+		<result column="title" property="title" jdbcType="VARCHAR" />
+		<result column="category" property="category" jdbcType="VARCHAR" />
+		<result column="is_private" property="isPrivate" jdbcType="VARCHAR" />
+		<result column="report_time" property="reportTime" jdbcType="TIMESTAMP" />
+		<result column="upvote" property="upvote" jdbcType="INTEGER" />
+		<result column="downvote" property="downvote" jdbcType="INTEGER" />
+		<result column="comment_num" property="commentNum" jdbcType="INTEGER" />
+	</resultMap>
+	<resultMap id="ResultMapWithBLOBs" type="com.kzewen.entity.Article" extends="BaseResultMap" >
+		<result column="content" property="content" jdbcType="LONGVARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List" >
+    id, admin_id, title, category, is_private, report_time, upvote, downvote, comment_num
+  </sql>
+	<sql id="Blob_Column_List" >
+    content
+  </sql>
+	<select id="finByKey" resultMap="ResultMapWithBLOBs" parameterType="String" >
+		select *
+		from article
+		where title like concat('%',#{title},'%')
+	</select>
+
+
+
+
+
+
+
+
+</mapper>
