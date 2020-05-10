@@ -29,6 +29,13 @@ public class TestA extends AbstractJUnit4SpringContextTests {
     private FileImgService fileImgService;
 
     @Test
+    public void getPath(){
+        String path = getClass().getResource("/").getPath();
+        System.out.println(System.getProperty("user.dir")+"--------------------------");
+
+    }
+
+    @Test
     public void testFindByKey() {
         List<Article> articleList = articleMapper.finByKey("3");
         for(Article article:articleList){

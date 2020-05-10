@@ -58,7 +58,9 @@ public class FIleImgServiceImpl implements FileImgService {
     //图片地址是否存在
 
     private File path(String IMAGEPATH) {
-        File pat=new File("C:\\K_computer\\work_place\\kkblog2\\web\\src\\main\\webapp\\images\\otherr");
+        String path1 = System.getProperty("user.dir");
+       // File pat=new File("C:\\K_computer\\work_place\\kkblog2\\web\\src\\main\\webapp\\images\\other");
+        File pat = new File(path1+"\\src\\main\\webapp\\images\\other");
         File path = new File(IMAGEPATH);
         if(!pat.isDirectory()) {
             pat.mkdirs();
